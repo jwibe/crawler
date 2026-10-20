@@ -47,14 +47,21 @@
   <ul>
     <li>It obeys <code>robots.txt</code>, under the name <code>CompanyIntelBot</code> (and <code>*</code>).</li>
     <li>It sends at most one request per second to any one host, backs off on <code>429</code> and <code>503</code>, and honours <code>Retry-After</code>.</li>
-    <li>It does not store personal data: no names, personal email addresses or phone numbers. Contact details in job descriptions are removed before anything is saved.</li>
+  </ul>
+
+  <h2>What it keeps</h2>
+  <ul>
+    <li>Facts about a company (what it does, its products, links to its own pages and accounts, the services it uses) and its job postings. No lists of people, and no page text.</li>
+    <li>Job postings as the company published them, with email addresses and phone numbers removed before they are saved. A posting's text can still name people, for example a recruiter, because the company wrote it that way.</li>
+    <li>When a language model is used, the text of the pages above is sent to its provider (Anthropic) to write a short description of the company. Only the description is kept.</li>
   </ul>
 
   <h2>How to stop it</h2>
   <p>Add this to your site's <code>robots.txt</code>; it takes effect within a day:</p>
   <pre>User-agent: CompanyIntelBot
 Disallow: /</pre>
-  <p>To have your company or job board left out entirely, or for anything else, contact us (below).</p>
+  <p>To have your company or job board left out entirely, contact us (below). We delete everything stored for it, its postings and their history included, and it is not collected again. Copies in our backups are gone within 12 weeks.</p>
+  <p>For anything else, contact us too.</p>
 
   <h2>Contact</h2>
   <p><a href="https://github.com/jwibe">github.com/jwibe</a>. Open an issue in the repository that hosts this page, or use the contact options on the profile.</p>
