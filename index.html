@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>CompanyIntelBot</title>
+<title>FirmtrailBot</title>
 <style>
   :root { --fg: #1d1d1f; --muted: #5b5b60; --bg: #ffffff; --code: #f2f2f4; --link: #0b57d0; }
   @media (prefers-color-scheme: dark) { :root { --fg: #ececf1; --muted: #a6a6ad; --bg: #16161a; --code: #26262c; --link: #8ab4f8; } }
@@ -22,12 +22,12 @@
 </head>
 <body>
 <main>
-  <h1>CompanyIntelBot</h1>
+  <h1>FirmtrailBot</h1>
   <p class="lead">The crawler behind a company data service that is being built. If it visited your site, this page says what it does and how to stop it.</p>
 
   <h2>How to recognise it</h2>
-  <p>Every request carries this User-Agent, with a link to this page:</p>
-  <pre>CompanyIntelBot/1.0 (+<span id="self">this page's address</span>)</pre>
+  <p>We are renaming CompanyIntelBot to FirmtrailBot. During the transition, requests may still identify as <code>CompanyIntelBot/1.0</code>. The renamed crawler carries this User-Agent, with a link to this page:</p>
+  <pre>FirmtrailBot/1.0 (+<span id="self">this page's address</span>)</pre>
 
   <h2>What it fetches</h2>
   <ul>
@@ -45,7 +45,7 @@
 
   <h2>How it behaves</h2>
   <ul>
-    <li>It obeys <code>robots.txt</code>, under the name <code>CompanyIntelBot</code> (and <code>*</code>).</li>
+    <li>Each version obeys <code>robots.txt</code> for its product name (and <code>*</code>). FirmtrailBot also honors restrictions for <code>CompanyIntelBot</code>; changing the name does not bypass an existing opt-out.</li>
     <li>It sends at most one request per second to any one host, backs off on <code>429</code> and <code>503</code>, and honours <code>Retry-After</code>.</li>
   </ul>
 
@@ -57,8 +57,11 @@
   </ul>
 
   <h2>How to stop it</h2>
-  <p>Add this to your site's <code>robots.txt</code>; it takes effect within a day:</p>
-  <pre>User-agent: CompanyIntelBot
+  <p>Add both entries to your site's <code>robots.txt</code> to stop either version during the transition; it takes effect within a day:</p>
+  <pre>User-agent: FirmtrailBot
+Disallow: /
+
+User-agent: CompanyIntelBot
 Disallow: /</pre>
   <p>To have your company or job board left out entirely, contact us (below). We delete everything stored for it, its postings and their history included, and it is not collected again. Copies in our backups are gone within 12 weeks.</p>
   <p>For anything else, contact us too.</p>
